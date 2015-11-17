@@ -3,17 +3,13 @@ package opengarden.yee.interview.yistest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
 
 import service.SolvePuzzleCallBack;
 import service.SolvePuzzleService;
@@ -28,7 +24,7 @@ public class PopulationPuzzleActivity extends Activity implements SolvePuzzleCal
     Button mSubmit;
     ProgressDialog mDialog;
     SolvePuzzleService mService;
-    Timer mTimer = new Timer();
+    Timer mTimer;
     int mTime = 0;
     String mTimeCost = "";
     String mOutput = "";
@@ -51,6 +47,7 @@ public class PopulationPuzzleActivity extends Activity implements SolvePuzzleCal
             @Override
             public void onClick(View v) {
                 startService();
+                mTimer = new Timer();
                 mTimer.schedule(new TimerTask() {
                     @Override
                     public void run() {
