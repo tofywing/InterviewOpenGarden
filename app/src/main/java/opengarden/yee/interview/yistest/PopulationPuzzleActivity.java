@@ -48,6 +48,7 @@ public class PopulationPuzzleActivity extends Activity implements SolvePuzzleCal
             public void onClick(View v) {
                 startService();
                 mTimer = new Timer();
+                mTime = 0;
                 mTimer.schedule(new TimerTask() {
                     @Override
                     public void run() {
