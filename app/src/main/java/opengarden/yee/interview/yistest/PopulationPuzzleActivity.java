@@ -31,7 +31,7 @@ public class PopulationPuzzleActivity extends Activity implements SolvePuzzleCal
     Timer mTimer = new Timer();
     int mTime = 0;
     String mTimeCost = "";
-    String mOutput="";
+    String mOutput = "";
 
     public static final int TARGET = 100000000;
     private static final int[] defaultDataSet = {
@@ -76,7 +76,7 @@ public class PopulationPuzzleActivity extends Activity implements SolvePuzzleCal
         mDialog.hide();
         mDialog.setMessage(getString(R.string.complete));
         mTimer.cancel();
-        mOutput = getString(R.string.processing_result)+"\n\n"+mService.getResult().toString();
+        mOutput = getString(R.string.processing_result) + mTimeCost + "\n\n" + mService.getResult().toString();
         mResult.setText(mOutput);
     }
 
